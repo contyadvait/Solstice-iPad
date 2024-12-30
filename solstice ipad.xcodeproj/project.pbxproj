@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		253161702D2279C100BA9CB3 /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2531616E2D2279C000BA9CB3 /* CrimsonPro-Italic-VariableFont_wght.ttf */; };
+		253161712D2279C100BA9CB3 /* CrimsonPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2531616F2D2279C000BA9CB3 /* CrimsonPro-VariableFont_wght.ttf */; };
+		253161742D2279D000BA9CB3 /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 253161722D2279CF00BA9CB3 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */; };
+		253161752D2279D000BA9CB3 /* PlayfairDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 253161732D2279D000BA9CB3 /* PlayfairDisplay-VariableFont_wght.ttf */; };
 		255FDC2F2D22656C00D9DB7E /* solstice_ipadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FDC2E2D22656C00D9DB7E /* solstice_ipadApp.swift */; };
 		255FDC312D22656C00D9DB7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FDC302D22656C00D9DB7E /* ContentView.swift */; };
 		255FDC332D22656E00D9DB7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255FDC322D22656E00D9DB7E /* Assets.xcassets */; };
@@ -16,9 +20,16 @@
 		255FDC412D22661500D9DB7E /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FDC402D22661500D9DB7E /* StorageItems.swift */; };
 		255FDC432D22662300D9DB7E /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FDC422D22662300D9DB7E /* TasksView.swift */; };
 		255FDC452D22662F00D9DB7E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255FDC442D22662F00D9DB7E /* TimerView.swift */; };
+		255FDC482D22668300D9DB7E /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 255FDC472D22668300D9DB7E /* Forever */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2528AF622D228FD5006DCDAE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2531616E2D2279C000BA9CB3 /* CrimsonPro-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		2531616F2D2279C000BA9CB3 /* CrimsonPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		253161722D2279CF00BA9CB3 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		253161732D2279D000BA9CB3 /* PlayfairDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlayfairDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		253161762D2279EB00BA9CB3 /* solstice-ipad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "solstice-ipad-Info.plist"; sourceTree = SOURCE_ROOT; };
 		255FDC2B2D22656C00D9DB7E /* solstice ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "solstice ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		255FDC2E2D22656C00D9DB7E /* solstice_ipadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = solstice_ipadApp.swift; sourceTree = "<group>"; };
 		255FDC302D22656C00D9DB7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255FDC482D22668300D9DB7E /* Forever in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +57,7 @@
 		255FDC222D22656C00D9DB7E = {
 			isa = PBXGroup;
 			children = (
+				2528AF622D228FD5006DCDAE /* README.md */,
 				255FDC2D2D22656C00D9DB7E /* solstice ipad */,
 				255FDC2C2D22656C00D9DB7E /* Products */,
 			);
@@ -61,8 +74,13 @@
 		255FDC2D2D22656C00D9DB7E /* solstice ipad */ = {
 			isa = PBXGroup;
 			children = (
+				253161762D2279EB00BA9CB3 /* solstice-ipad-Info.plist */,
 				255FDC2E2D22656C00D9DB7E /* solstice_ipadApp.swift */,
 				255FDC402D22661500D9DB7E /* StorageItems.swift */,
+				2531616E2D2279C000BA9CB3 /* CrimsonPro-Italic-VariableFont_wght.ttf */,
+				2531616F2D2279C000BA9CB3 /* CrimsonPro-VariableFont_wght.ttf */,
+				253161722D2279CF00BA9CB3 /* PlayfairDisplay-Italic-VariableFont_wght.ttf */,
+				253161732D2279D000BA9CB3 /* PlayfairDisplay-VariableFont_wght.ttf */,
 				255FDC422D22662300D9DB7E /* TasksView.swift */,
 				255FDC442D22662F00D9DB7E /* TimerView.swift */,
 				255FDC302D22656C00D9DB7E /* ContentView.swift */,
@@ -98,6 +116,9 @@
 			dependencies = (
 			);
 			name = "solstice ipad";
+			packageProductDependencies = (
+				255FDC472D22668300D9DB7E /* Forever */,
+			);
 			productName = "solstice ipad";
 			productReference = 255FDC2B2D22656C00D9DB7E /* solstice ipad.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 255FDC222D22656C00D9DB7E;
+			packageReferences = (
+				255FDC462D22668300D9DB7E /* XCRemoteSwiftPackageReference "forever" */,
+			);
 			productRefGroup = 255FDC2C2D22656C00D9DB7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,7 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				255FDC362D22656E00D9DB7E /* Preview Assets.xcassets in Resources */,
+				253161742D2279D000BA9CB3 /* PlayfairDisplay-Italic-VariableFont_wght.ttf in Resources */,
 				255FDC332D22656E00D9DB7E /* Assets.xcassets in Resources */,
+				253161712D2279C100BA9CB3 /* CrimsonPro-VariableFont_wght.ttf in Resources */,
+				253161752D2279D000BA9CB3 /* PlayfairDisplay-VariableFont_wght.ttf in Resources */,
+				253161702D2279C100BA9CB3 /* CrimsonPro-Italic-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +318,13 @@
 				DEVELOPMENT_TEAM = VYG284C3Z9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "solstice-ipad-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Solstice;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,12 +352,13 @@
 				DEVELOPMENT_TEAM = VYG284C3Z9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "solstice-ipad-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Solstice;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -367,6 +397,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		255FDC462D22668300D9DB7E /* XCRemoteSwiftPackageReference "forever" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jiachenyee/forever";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		255FDC472D22668300D9DB7E /* Forever */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 255FDC462D22668300D9DB7E /* XCRemoteSwiftPackageReference "forever" */;
+			productName = Forever;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 255FDC232D22656C00D9DB7E /* Project object */;
 }

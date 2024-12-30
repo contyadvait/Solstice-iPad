@@ -33,6 +33,7 @@ struct TasksView: View {
             }
         }
         .padding()
+        .preferredColorScheme(.dark)
     }
 }
 

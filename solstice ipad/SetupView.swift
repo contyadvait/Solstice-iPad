@@ -52,9 +52,11 @@ struct SetupView: View {
                             HStack {
                                 Text("Name:")
                                     .font(.custom("Crimson Pro", size: 20))
+                                    .foregroundColor(.white)
                                 TextField("Advait", text: $name)
                                     .font(.custom("Crimson Pro", size: 20))
                                     .textFieldStyle(.roundedBorder)
+                                    .preferredColorScheme(.dark)
                             }
                             
                             Button {
@@ -95,13 +97,21 @@ struct SetupView: View {
                         VStack {
                             Text("Hello, _\(name)_!")
                                 .font(.custom("Crimson Pro", size: 20))
+                                .foregroundColor(.white)
+                            
                             Text("What task would you like to do _today_?")
                                 .font(.custom("Crimson Pro", size: 20))
+                                .foregroundColor(.white)
+                            
                             HStack {
                                 Text("Task:")
                                     .font(.custom("Crimson Pro", size: 20))
+                                    .foregroundColor(.white)
+                                
                                 TextField("Finish studying Physics: Kinematics", text: $task)
                                     .font(.custom("Crimson Pro", size: 20))
+                                    .preferredColorScheme(.dark)
+                                    .textFieldStyle(.roundedBorder)
                             }
                             HStack {
                                 Button {

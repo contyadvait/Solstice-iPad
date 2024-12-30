@@ -15,61 +15,60 @@ struct TimerView: View {
     @State var showButton: Bool = false
     @State var timerHover: Timer?
     @State var editTasks: Bool = false
+    @State var showSettings: Bool = false
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                // Background Image
-                Image(settings.background)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .edgesIgnoringSafeArea(.all)
-                
-                // Centered Content
-                VStack {
-                    Spacer()
-                    if showWelcomeBack {
-                        Text("Welcome _back_, \(name).")
-                            .transition(.opacity)
-                            .font(.custom("Crimson Pro", size: 20))
-                            .foregroundColor(.white)
-                            .onAppear {
-                                refreshDisplayedTodo()
-                                
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                                    withAnimation {
-                                        showWelcomeBack = false
-                                    }
+        ZStack {
+            // Background Image
+            Image(settings.background)
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .transition(.opacity)
+            
+            // Centered Content
+            VStack {
+                Spacer()
+                if showWelcomeBack {
+                    Text("Welcome _back_, \(name).")
+                        .transition(.opacity)
+                        .font(.custom("Crimson Pro", size: 24))
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .onAppear {
+                            refreshDisplayedTodo()
+                            
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                                withAnimation {
+                                    showWelcomeBack = false
                                 }
                             }
-                    } else {
-                        Text(currentTimerMode.displayText)
-                            .font(.custom("Crimson Pro", size: 20))
-                            .foregroundColor(.white)
-                            .transition(.opacity)
-                    }
-                    
-                    Text("\(minutes):\(String(format: "%02d", seconds))")
-                        .font(.custom("Crimson Pro", size: 100))
+                        }
+                } else {
+                    Text(currentTimerMode.displayText)
+                        .font(.custom("Crimson Pro", size: 24))
                         .foregroundColor(.white)
-                    
-                    VStack {
-                        Text("_Working on:_ \(displayedTodo.task)")
-                            .font(.custom("Crimson Pro", size: 20))
-                            .foregroundColor(.white)
-                            .onTapGesture {
-                                editTasks.toggle()
-                            }
-                            .onChange(of: editTasks) { _ in
-                                refreshDisplayedTodo()
-                            }
-                            .popover(isPresented: $editTasks, arrowEdge: .trailing) {
-                                TasksView(todos: $todos)
-                            }
-                    }
-                    
-                    if showButton {
+                        .transition(.opacity)
+                }
+                
+                Text("\(minutes):\(String(format: "%02d", seconds))")
+                    .font(.custom("Crimson Pro", size: 120))
+                    .foregroundColor(.white)
+                
+                VStack {
+                    Text("_Working on:_ \(displayedTodo.task)")
+                        .font(.custom("Crimson Pro", size: 24))
+                        .foregroundColor(.white)
+                        .onTapGesture {
+                            editTasks.toggle()
+                        }
+                        .popover(isPresented: $editTasks, arrowEdge: .trailing) {
+                            TasksView(todos: $todos)
+                        }
+                }
+                
+                if showButton {
+                    HStack(spacing: 20) {
                         Button {
                             if !isRunning {
                                 startTimer()
@@ -77,50 +76,74 @@ struct TimerView: View {
                                 stopTimer()
                             }
                         } label: {
-                            VStack {
+                            HStack {
                                 Image(systemName: isRunning ? "pause" : "play")
                                     .foregroundColor(.white)
                                 Text(isRunning ? "Pause" : "Resume")
                                     .foregroundColor(.white)
                                     .font(.custom("Crimson Pro", size: 20))
                             }
-                            .padding(5)
+                            .padding(10)
                             .background {
-                                RoundedRectangle(cornerRadius: 5.0, style: .continuous)
-                                    .fill(Color.gray)
-                                    .opacity(0.5)
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.gray.opacity(0.6))
                                     .blendMode(.overlay)
                                     .shadow(radius: 3)
                             }
                         }
                         .buttonStyle(.borderless)
-                        .transition(.opacity)
+                        
+                        Button {
+                            showSettings = true
+                        } label: {
+                            VStack {
+                                Image(systemName: "gear")
+                                    .foregroundColor(.white)
+                            }
+                            .padding(10)
+                            .background {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .fill(Color.gray.opacity(0.6))
+                                    .blendMode(.overlay)
+                                    .shadow(radius: 3)
+                            }
+                        }
+                        .buttonStyle(.borderless)
                     }
-                    Spacer()
+                    .transition(.opacity)
                 }
-                .padding()
-                .frame(minWidth: 300, maxWidth: 400, minHeight: 200, maxHeight: 300)
-                .background {
-                    RoundedRectangle(cornerRadius: 10.0, style: .continuous)
-                        .fill(Color.black)
-                        .opacity(0.7)
-                        .blendMode(.overlay)
-                        .shadow(radius: 3)
-                        .onHover { hovering in
-                            if hovering {
+                Spacer()
+            }
+            .padding()
+            .frame(width: 450, height: 300)
+            .background {
+                RoundedRectangle(cornerRadius: 15)
+                    .fill(Color.black.opacity(0.7))
+                    .blendMode(.overlay)
+                    .shadow(radius: 5)
+                    .onHover { hovering in
+                        if hovering {
+                            withAnimation {
+                                showButton = true
+                            }
+                            timerHover?.invalidate()
+                        } else {
+                            timerHover = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
                                 withAnimation {
-                                    showButton = true
-                                }
-                                timerHover?.invalidate()
-                            } else {
-                                timerHover = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
-                                    withAnimation {
-                                        showButton = false
-                                    }
+                                    showButton = false
                                 }
                             }
                         }
-                }
+                    }
+            }
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsView(data: $settings)
+                .frame(maxWidth: 600, maxHeight: 400)
+        }
+        .onTapGesture {
+            withAnimation {
+                showButton.toggle()
             }
         }
     }
@@ -170,6 +193,9 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(todos: .constant([Todo(task: "Something", priority: 1)]), name: .constant("Advait"), settings: .constant(SettingData()))
+        TimerView(todos: .constant([Todo(task: "Something", priority: 1)]),
+                  name: .constant("Advait"),
+                  settings: .constant(SettingData()))
+        .previewDevice("iPad Pro (12.9-inch)")
     }
 }

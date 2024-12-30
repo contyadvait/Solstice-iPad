@@ -18,9 +18,5 @@ struct SolsticeApp: App {
         WindowGroup {
             ContentView(name: $name, todos: $todos, setupPage: $setupPage, settingsData: $settingsData)
         }
-        
-        Settings {
-            SettingsView(data: $settingsData)
-        }
     }
 }
